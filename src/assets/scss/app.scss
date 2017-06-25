@@ -3,6 +3,7 @@
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
+@import 'bower_components/components-font-awesome/scss/font-awesome';
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -53,3 +54,7 @@
 @import 'components/building-blocks/hover-underline-menu';
 @import 'components/building-blocks/news-image-gallery';
 @import 'components/building-blocks/featured-image-block-grid';
+@import 'components/building-blocks/contact-us-section';
+@import 'components/building-blocks/fullscreen-image-slider';
+
+@import 'components/building-blocks/topbar-center-logo';

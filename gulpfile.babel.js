@@ -26,7 +26,7 @@ function loadConfig() {
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
- gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy), styleGuide));
+ gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy,copyfonts), styleGuide));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',
@@ -91,6 +91,11 @@ function sass() {
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
     .pipe(browser.reload({ stream: true }));
 }
+
+// This task copiest font awesome fonts into the right place 
+ function copyfonts() {
+    return gulp.src('./bower_components/components-font-awesome/fonts/*.*').pipe(gulp.dest('dist/assets/fonts'));
+  };
 
 // Combine JavaScript into one file
 // In production, the file is minified
